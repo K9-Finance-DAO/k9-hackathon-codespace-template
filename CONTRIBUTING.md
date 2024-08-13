@@ -10,7 +10,7 @@ This guide aims to provide an overview of the contribution workflow to help us m
 K9 Finance DAO is a a decentralized finance (DeFi) platform that allows users to stake their KNINE tokens to earn rewards on the Shibarium Network.
 
 This repo is a forkable template meant to help you kickstart your development on the Shibarium network. This is a monorepo that uses yarn workspaces to manage multiple packages:
-- `packages/contracts`: contains the smart contracts for your (hardhat) project
+- `packages/hardhat`: contains hardhat project with your smart contracts
 - `packages/app`: contains the code for a nextjs frontend
 - `packages/scaffold-eth`: contains a fork of [scaffold-eth-2](https://github.com/scaffold-eth/scaffold-eth-2), a minimal and forkable repo providing builders with a starter kit to build decentralized applications on EVM chains.
 
@@ -83,7 +83,7 @@ Here are some tips for a high-quality pull request:
 - Create a title for the PR that accurately defines the work done.
 - Structure the description neatly to make it easy to consume by the readers. For example, you can include bullet points and screenshots instead of having one large paragraph.
 - Add the link to the issue if applicable.
-- Have a good commit message that summarises the work done.
+- Have a good commit message that summarizes the work done.
 
 Once you submit your PR:
 

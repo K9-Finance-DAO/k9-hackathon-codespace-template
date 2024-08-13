@@ -8,10 +8,10 @@
       "path": "./packages/app",
       "name": ">> 🖥 NextJS DApp <<"
     },
-    {
-      "path": "./packages/scaffold-eth",
-      "name": ">> 🏗️ Scaffold Eth <<"
-    },
+    // {
+    //   "path": "./packages/scaffold-eth",
+    //   "name": ">> 🏗️ Scaffold Eth <<"
+    // },
     {
       "path": ".",
       "name": ">> 🗀 Project Root <<"
@@ -56,12 +56,14 @@
       "activityBarBadge.background": "#722d31",
       "activityBarBadge.foreground": "#FCC772",
       "commandCenter.border": "#FCC77299",
-      "sash.hoverBorder": "#D10C00",
-      "statusBar.background": "#FF511C",
+      "commandCenter.foreground": "#FCC772",
+      "commandCenter.background": "#D10C00",
+      "sash.hoverBorder": "#FF511C",
+      "statusBar.background": "#D10C00",
       "statusBar.foreground": "#FCC772",
-      "statusBarItem.hoverBackground": "#D10C00",
+      "statusBarItem.hoverBackground": "#FF511C",
       "statusBarItem.remoteBackground": "#45DB00",
-      "statusBarItem.remoteForeground": "#FCC772",
+      "statusBarItem.remoteForeground": "#242424",
       "titleBar.activeBackground": "#FF511C",
       "titleBar.activeForeground": "#FCC772",
       "titleBar.inactiveBackground": "#FF511C99",
