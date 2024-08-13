@@ -1,11 +1,11 @@
 const path = require("path");
 
 const buildNextEslintCommand = (filenames) =>
-  `yarn next:lint --fix --file ${filenames
+  `yarn se2:lint --fix --file ${filenames
     .map((f) => path.relative(path.join("packages", "nextjs"), f))
     .join(" --file ")}`;
 
-const checkTypesNextCommand = () => "yarn next:check-types";
+const checkTypesNextCommand = () => "yarn se2:check-types";
 
 const buildHardhatEslintCommand = (filenames) =>
   `yarn hardhat:lint-staged --fix ${filenames
@@ -14,6 +14,10 @@ const buildHardhatEslintCommand = (filenames) =>
 
 module.exports = {
   "packages/nextjs/**/*.{ts,tsx}": [
+    buildNextEslintCommand,
+    checkTypesNextCommand,
+  ],
+  "packages/scaffold-eth/**/*.{ts,tsx}": [
     buildNextEslintCommand,
     checkTypesNextCommand,
   ],
