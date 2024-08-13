@@ -4,45 +4,40 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/hardhat",
-      "packages/scaffold-eth",
-      "packages/app"
+      "./packages/hardhat",
+      "./packages/scaffold-eth",
+      "./packages/nextjs"
     ]
   },
   "scripts": {
-    "dev": "yarn app:dev && yarn se2:start",
+    "dev": "yarn nextjs:dev && yarn se2:dev",
     "test": "yarn hardhat:test",
-    
-    "app:dev": "yarn workspace @k9/app dev --port 3000",
-    "se2:start": "yarn workspace @k9/scaffold-eth dev --port 3008",
-
+    "nextjs:dev": "yarn workspace @k9/nextjs dev --port 3000",
+    "se2:dev": "yarn workspace @k9/scaffold-eth dev --port 3008",
     "hardhat:compile": "yarn workspace @k9/hardhat compile",
     "hardhat:chain": "yarn workspace @k9/hardhat chain",
     "hardhat:fork": "yarn workspace @k9/hardhat fork",
     "hardhat:generate": "yarn workspace @k9/hardhat generate",
     "hardhat:deploy": "yarn workspace @k9/hardhat deploy",
     "hardhat:test": "yarn workspace @k9/hardhat test",
-
     "hardhat:account": "yarn workspace @k9/hardhat account",
     "hardhat:verify": "yarn workspace @k9/hardhat verify",
     "hardhat:hardhat-verify": "yarn workspace @k9/hardhat hardhat-verify",
     "hardhat:lint": "yarn workspace @k9/hardhat lint",
     "hardhat:lint-staged": "yarn workspace @k9/hardhat lint-staged",
-
     "se2:lint": "yarn workspace @k9/scaffold-eth lint",
     "se2:format": "yarn workspace @k9/scaffold-eth format",
     "se2:check-types": "yarn workspace @k9/scaffold-eth check-types",
-    
     "postinstall": "husky install",
     "precommit": "lint-staged"
   },
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.4.0",
   "engines": {
-    "yarn": ">= 4.1.0"
+    "yarn": ">= 4.4.0"
   },
   "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9"
   },
   "cspell": {
     "import": "./.cspell.json"

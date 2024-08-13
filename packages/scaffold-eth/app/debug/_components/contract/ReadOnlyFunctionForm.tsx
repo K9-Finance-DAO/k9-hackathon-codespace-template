@@ -12,9 +12,9 @@ import {
   getInitialFormState,
   getParsedContractFunctionArgs,
   transformAbiFunction,
-} from "~~/app/debug/_components/contract";
-import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
-import { getParsedError, notification } from "~~/utils/scaffold-eth";
+} from "@/app/debug/_components/contract";
+import { useTargetNetwork } from "@/hooks/scaffold-eth/useTargetNetwork";
+import { getParsedError, notification } from "@/utils/scaffold-eth";
 
 type ReadOnlyFunctionFormProps = {
   contractAddress: Address;

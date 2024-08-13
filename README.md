@@ -61,7 +61,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 # How To Use this Project
 
 ## Setup
-From the project root, run `yarn` to install all dependencies.
+From the project root, run `yarn install` to install all dependencies.
 
 ## Running the project
-From the project root, run `yarn dev` to start the project.
+
+From the project root, run `yarn dev` to start the project. This will start:
+- `yarn workspace @k9/app dev --port 3000` to start the nextjs app on [localhost:3000](http://localhost:3000)
+- `yarn workspace @k9/scaffold-eth dev --port 3008` to start the scaffold-eth app on [localhost:3008](http://localhost:3008)
