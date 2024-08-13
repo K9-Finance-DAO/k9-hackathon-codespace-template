@@ -1,0 +1,93 @@
+{
+  "folders": [
+    {
+      "path": "./packages/contracts",
+      "name": ">> 📝 Smart Contracts <<"
+    },
+    {
+      "path": "./packages/app",
+      "name": ">> 🖥 NextJS DApp <<"
+    },
+    {
+      "path": "./packages/scaffold-eth",
+      "name": ">> 🏗️ Scaffold Eth <<"
+    },
+    {
+      "path": ".",
+      "name": ">> 🗀 Project Root <<"
+    }
+  ],
+  "settings": {
+    // Dictionary for cSpell Spell Checker 
+    "cSpell.import": ["./.cspell.json"],
+    "solidity.compileUsingRemoteVersion": "v0.8.26+commit.8a97fa7a",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "args": ["--login"],
+        "icon": "terminal-bash"
+      }
+    },
+    "explorer.compactFolders": false,
+    "editor.rulers": [80, 120],
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.matchBrackets": "always",
+    "editor.renderWhitespace": "selection",
+    "[solidity]": {
+      "editor.defaultFormatter": "johnpapa.vscode-peacock"
+    },
+    "[typescript, javascript, typescriptreact, javascriptreact]": {
+      "editor.tabSize": 2
+    },
+    "[json, jsonc, jsonl]": {
+      "editor.tabSize": 4,
+      "editor.quickSuggestions": {
+        "strings": true
+      }
+      // ,"editor.suggest.insertMode": "replace"
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#D10C00",
+      "activityBar.background": "#D10C00",
+      "activityBar.foreground": "#FCC772",
+      "activityBar.inactiveForeground": "#FCC77299",
+      "activityBarBadge.background": "#722d31",
+      "activityBarBadge.foreground": "#FCC772",
+      "commandCenter.border": "#FCC77299",
+      "sash.hoverBorder": "#D10C00",
+      "statusBar.background": "#FF511C",
+      "statusBar.foreground": "#FCC772",
+      "statusBarItem.hoverBackground": "#D10C00",
+      "statusBarItem.remoteBackground": "#45DB00",
+      "statusBarItem.remoteForeground": "#FCC772",
+      "titleBar.activeBackground": "#FF511C",
+      "titleBar.activeForeground": "#FCC772",
+      "titleBar.inactiveBackground": "#FF511C99",
+      "titleBar.inactiveForeground": "#FCC77299"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "JuanBlanco.solidity",
+      "ms-vscode.vscode-typescript-next",
+      // My favourite extensions
+      "yo1dog.cursor-align",
+      "streetsidesoftware.code-spell-checker",
+      "johnpapa.vscode-peacock",
+      // "VisualStudioExptTeam.vscodeintellicode",
+      "christian-kohler.npm-intellisense",
+      "YoavBls.pretty-ts-errors",
+      // dev container requirements
+      "github.codespaces",
+      "ms-azuretools.vscode-docker"
+    ],
+    "unwantedRecommendations": [
+      "firefox-devtools.vscode-firefox-debug",
+      "googlecloudtools.cloudcode",
+      "eamodio.gitlens"
+    ]
+  }
+}

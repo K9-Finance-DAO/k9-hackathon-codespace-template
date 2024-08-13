@@ -1,0 +1,88 @@
+{
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+      3000, // Default `next dev` NextJS App
+      3001, // Default `yarn dev` NextJS App run through task
+      3008, // Default `yarn start` Scaffold-Eth App run through task
+      8545  // Default Hardhat Network
+    ],
+    "portsAttributes": {
+      "3000": {
+        "label": "Next JS App",
+        "onAutoForward": "openBrowser"
+      },
+      "3001": {
+        "label": "Next DApp",
+        "onAutoForward": "openBrowser"
+      },
+      "3008": {
+        "label": "Scaffold-Eth App",
+        "onAutoForward": "openBrowser"
+      },
+      "8545": {
+        "label": "Hardhat Network",
+        "onAutoForward": "silent"
+      }
+    },
+    "mounts": [
+      // {
+      // 	"source": "${env:HOME}${env:USERPROFILE}/.ssh",
+      // 	"type": "bind",
+      // 	"target": "/home/node/.ssh",
+      // 	"consistency": "cached",
+      // 	"readonly": true,
+      // }
+    ],
+    // Configure tool-specific properties.
+    "customizations": {
+      "codespaces": {},
+      "vscode": {
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+          "esbenp.prettier-vscode",
+          "JuanBlanco.solidity",
+          "ms-vscode.vscode-typescript-next",
+          // My favourite extensions
+          "yo1dog.cursor-align",
+          "streetsidesoftware.code-spell-checker",
+          "johnpapa.vscode-peacock",
+          // "VisualStudioExptTeam.vscodeintellicode",
+          "christian-kohler.npm-intellisense",
+          "YoavBls.pretty-ts-errors",
+          // dev container requirements
+          "github.codespaces",
+          "ms-azuretools.vscode-docker"
+        ],
+        "settings": {
+          // "terminal.integrated.shell.linux": "/bin/bash -l",
+          "workbench.colorCustomizations": {
+            "activityBar.activeBackground": "#D10C00",
+            "activityBar.background": "#D10C00",
+            "activityBar.foreground": "#FCC772",
+            "activityBar.inactiveForeground": "#FCC77299",
+            "activityBarBadge.background": "#722d31",
+            "activityBarBadge.foreground": "#FCC772",
+            "commandCenter.border": "#FCC77299",
+            "sash.hoverBorder": "#D10C00",
+            "statusBar.background": "#FF511C",
+            "statusBar.foreground": "#FCC772",
+            "statusBarItem.hoverBackground": "#D10C00",
+            "statusBarItem.remoteBackground": "#45DB00",
+            "statusBarItem.remoteForeground": "#FCC772",
+            "titleBar.activeBackground": "#FF511C",
+            "titleBar.activeForeground": "#FCC772",
+            "titleBar.inactiveBackground": "#FF511C99",
+            "titleBar.inactiveForeground": "#FCC77299"
+          }
+        }
+      }
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "echo 'Container ready!'"
+    // "postStartCommand": "yarn install",
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+  }
+  
