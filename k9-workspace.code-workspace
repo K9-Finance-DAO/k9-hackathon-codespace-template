@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "path": "./packages/contracts",
+      "path": "./packages/hardhat",
       "name": ">> 📝 Smart Contracts <<"
     },
     {
@@ -49,25 +49,8 @@
       // ,"editor.suggest.insertMode": "replace"
     },
     "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#D10C00",
-      "activityBar.background": "#D10C00",
-      "activityBar.foreground": "#FCC772",
-      "activityBar.inactiveForeground": "#FCC77299",
-      "activityBarBadge.background": "#722d31",
-      "activityBarBadge.foreground": "#FCC772",
-      "commandCenter.border": "#FCC77299",
       "commandCenter.foreground": "#FCC772",
-      "commandCenter.background": "#D10C00",
-      "sash.hoverBorder": "#FF511C",
-      "statusBar.background": "#D10C00",
-      "statusBar.foreground": "#FCC772",
-      "statusBarItem.hoverBackground": "#FF511C",
-      "statusBarItem.remoteBackground": "#45DB00",
-      "statusBarItem.remoteForeground": "#242424",
-      "titleBar.activeBackground": "#FF511C",
-      "titleBar.activeForeground": "#FCC772",
-      "titleBar.inactiveBackground": "#FF511C99",
-      "titleBar.inactiveForeground": "#FCC77299"
+      "commandCenter.background": "#D10C00"
     }
   },
   "extensions": {
