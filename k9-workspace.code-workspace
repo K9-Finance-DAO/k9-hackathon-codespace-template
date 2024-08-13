@@ -18,7 +18,7 @@
     }
   ],
   "settings": {
-    // Dictionary for cSpell Spell Checker 
+    // Dictionary for cSpell Spell Checker
     "cSpell.import": ["./.cspell.json"],
     "solidity.compileUsingRemoteVersion": "v0.8.26+commit.8a97fa7a",
     "terminal.integrated.defaultProfile.linux": "bash",
@@ -41,7 +41,7 @@
     "[typescript, javascript, typescriptreact, javascriptreact]": {
       "editor.tabSize": 2
     },
-    "[json, jsonc, jsonl]": {
+    "[json, jsonc, jsonl, code-workspace]": {
       "editor.tabSize": 4,
       "editor.quickSuggestions": {
         "strings": true
@@ -68,7 +68,6 @@
       "titleBar.activeForeground": "#FCC772",
       "titleBar.inactiveBackground": "#FF511C99",
       "titleBar.inactiveForeground": "#FCC77299"
-
     }
   },
   "extensions": {
