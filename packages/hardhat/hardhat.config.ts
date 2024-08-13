@@ -9,19 +9,31 @@ import "solidity-coverage";
 import "@nomicfoundation/hardhat-verify";
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
+import "@openzeppelin/hardhat-upgrades";
+// import "@nomicfoundation/hardhat-ignition-ethers";
+import "@nomicfoundation/hardhat-toolbox";
 
 // If not set, it uses ours Alchemy's default API key.
 // You can get your own at https://dashboard.alchemyapi.io
 const providerApiKey = process.env.ALCHEMY_API_KEY || "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 // If not set, it uses the hardhat account 0 private key.
-const deployerPrivateKey =
-  process.env.DEPLOYER_PRIVATE_KEY ?? "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 // If not set, it uses ours Etherscan default API key.
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
+const deployerPrivateKey =
+  process.env.DEPLOYER_PRIVATE_KEY ?? "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+
+const adminAddress = process.env.ADMIN_ADDRESS;
+const minterAddress = process.env.MINTER_ADDRESS;
+const upgraderAddress = process.env.UPGRADER_ADDRESS;
+
+if (!adminAddress || !minterAddress || !upgraderAddress) {
+  throw new Error("ADMIN_ADDRESS, MINTER_ADDRESS and UPGRADER_ADDRESS must be set in .env file");
+}
+
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.17",
+    version: "0.8.23",
     settings: {
       optimizer: {
         enabled: true,
@@ -35,6 +47,21 @@ const config: HardhatUserConfig = {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
       default: 0,
+    },
+    admin: {
+      // By default, it will take the second Hardhat account as the admin
+      default: 1,
+      31337: adminAddress,
+    },
+    minter: {
+      // By default, it will take the third Hardhat account as the minter
+      default: 2,
+      31337: minterAddress,
+    },
+    upgrader: {
+      // By default, it will take the fourth Hardhat account as the upgrader
+      default: 3,
+      31337: upgraderAddress,
     },
   },
   networks: {
@@ -54,20 +81,24 @@ const config: HardhatUserConfig = {
       url: `https://eth-sepolia.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
     },
+    goerli: {
+      url: `https://eth-goerli.alchemyapi.io/v2/${providerApiKey}`,
+      accounts: [deployerPrivateKey],
+    },
     arbitrum: {
       url: `https://arb-mainnet.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
     },
-    arbitrumSepolia: {
-      url: `https://arb-sepolia.g.alchemy.com/v2/${providerApiKey}`,
+    arbitrumGoerli: {
+      url: `https://arb-goerli.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
     },
     optimism: {
       url: `https://opt-mainnet.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
     },
-    optimismSepolia: {
-      url: `https://opt-sepolia.g.alchemy.com/v2/${providerApiKey}`,
+    optimismGoerli: {
+      url: `https://opt-goerli.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
     },
     polygon: {
@@ -98,8 +129,8 @@ const config: HardhatUserConfig = {
       url: "https://mainnet.base.org",
       accounts: [deployerPrivateKey],
     },
-    baseSepolia: {
-      url: "https://sepolia.base.org",
+    baseGoerli: {
+      url: "https://goerli.base.org",
       accounts: [deployerPrivateKey],
     },
     scrollSepolia: {
@@ -119,7 +150,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
   },
-  // configuration for harhdat-verify plugin
+  // configuration for hardhat-verify plugin
   etherscan: {
     apiKey: `${etherscanApiKey}`,
   },
